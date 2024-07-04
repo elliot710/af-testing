@@ -1,0 +1,26 @@
+{
+  "name": "af-testing",
+  "version": "1.0.0",
+  "description": "testing framework (playwright/cucumber/ts)",
+  "main": "index.js",
+  "scripts": {
+    "test": "cucumber-js test"
+  },
+  "keywords": [
+    "bdd",
+    "ts",
+    "js",
+    "pw"
+  ],
+  "author": "Victor Iatco",
+  "license": "ISC",
+  "devDependencies": {
+    "@cucumber/cucumber": "^10.8.0",
+    "@playwright/test": "^1.45.1",
+    "cucumber-html-reporter": "^7.1.1",
+    "dotenv": "^16.4.5",
+    "playwright": "^1.45.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.5.3"
+  }
+}
