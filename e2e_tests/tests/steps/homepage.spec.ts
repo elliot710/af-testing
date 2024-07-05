@@ -3,6 +3,7 @@ import {expect} from "playwright/test";
 import {getPage} from "./basepage.spec";
 
 //Expected Page Object Model? Next time, I promise
+//I didn't really get if the goal was to test the condition or to write a fully fledged framework
 
 let price = 0;
 function convertStringToInt(str: string) {
@@ -82,10 +83,16 @@ Then('The products are displayed in the basket', async function () {
   await getPage().waitForTimeout(5000);
   //check if price is correct
   let cartPrice = await getPage().locator("xpath=(//span[contains(@class,'a-color-price sc-price-container')]//span)[2]").innerText();
-  let result = cartPrice.substring(1, 2);
-  console.log("Cart price is " + convertStringToInt(result))
+  let result = convertStringToInt(cartPrice.substring(1, 2));
+  console.log("Cart price is " + result)
+  //is item price equal to checkout price?
+  expect(result).toEqual(price);
 
-  expect(convertStringToInt(result)).toEqual(price);
+  await getPage().locator("xpath=(//input[@name='proceedToRetailCheckout'])").click();
+
+  expect(await getPage().locator("xpath=(//h1[@class='a-spacing-small']").innerText()).toContain("Sign in");
+  
+
   });
 
   //now let's have fun with something real
