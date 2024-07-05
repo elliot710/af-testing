@@ -12,6 +12,7 @@ This repository provides a starter template for a testing framework using Playwr
 
 
 The repository is also available as a github codespace if you want to spin it up and get running as quickly as possible.
+> **_NOTE:_**  Unfortunately UI tests won't run in codespace (headed mode)
 
 ### 1. Clone the Repository
 
