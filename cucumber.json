@@ -8,7 +8,7 @@
             "e2e_tests/tests/features/**/*.feature"
         ],
         "require": [
-            "e2e_tests/tests/steps/**/*.spec.ts"
+            "e2e_tests/tests/steps/**/*.spec.ts", "e2e_tests/corelib/corelib.spec.ts"
         ],
         "requireModule": [
             "ts-node/register"
