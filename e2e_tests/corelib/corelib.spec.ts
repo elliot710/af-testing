@@ -10,8 +10,8 @@ let bCtx:BrowserContext;
 let page:Page;
 
 Before(async function () {
-    browser = await chromium.launch({headless:false, channel:"chrome"});
-    bCtx = await browser.newContext({});
+    browser = await chromium.launch({headless:false, channel:"chrome", args:["--start-maximized"]});
+    bCtx = await browser.newContext({viewport:null, javaScriptEnabled:true});
     page = await bCtx.newPage();
     });
 
@@ -21,6 +21,8 @@ After(async function () {
     await browser.close();
     });
 
+
+//export hooks
 export function getPage():Page{
     return page;
 }

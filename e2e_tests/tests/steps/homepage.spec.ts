@@ -1,21 +1,25 @@
 import {Given, When, Then} from "@cucumber/cucumber";
 import {expect} from "playwright/test";
-import {getPage} from "./basepage.spec";
+import {getPage} from "../../corelib/corelib.spec";
 
-//Expected Page Object Model? Next time, I promise
+
 //I didn't really get if the goal was to test the condition or to write a fully fledged framework
 
+
 let price = 0;
+
 function convertStringToInt(str: string) {
   let num: number = parseInt(str);
   return num;
 }
 
+
 //it sucks, you know it and I know it
 //but it's made to work, not to be pretty
 
-Given('User is on home page', {timeout: 2 * 5000}, async function () {
+Given('User is on home page', async function () {
   await getPage().goto("https://amazon.com");
+  await getPage().waitForTimeout(5000);
   });
 
 
@@ -71,7 +75,6 @@ Then('The product Skittles is found and added to the cart', async function () {
   let skittles = await getPage().locator("xpath=(//span[@class='a-price-whole'])[3]").innerText();
 
   console.log("Skittles price is " + convertStringToInt(skittles))
-  //span class a-price-whole
   price = price + convertStringToInt(skittles)+ 1;
   console.log("Combined price is " + price)
   await getPage().locator("xpath=(//button[@class='a-button-text'])[1]").click();
@@ -83,14 +86,14 @@ Then('The products are displayed in the basket', async function () {
   await getPage().waitForTimeout(5000);
   //check if price is correct
   let cartPrice = await getPage().locator("xpath=(//span[contains(@class,'a-color-price sc-price-container')]//span)[2]").innerText();
-  let result = convertStringToInt(cartPrice.substring(1, 2));
+  let result = convertStringToInt(cartPrice.substring(1, 3));
   console.log("Cart price is " + result)
   //is item price equal to checkout price?
   expect(result).toEqual(price);
 
   await getPage().locator("xpath=(//input[@name='proceedToRetailCheckout'])").click();
 
-  expect(await getPage().locator("xpath=(//h1[@class='a-spacing-small']").innerText()).toContain("Sign in");
+  expect(await getPage().locator("xpath=//h1[@class='a-spacing-small']").innerText()).toContain("Sign in");
   
 
   });
