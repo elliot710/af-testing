@@ -4,7 +4,7 @@ This repository provides a starter template for a testing framework using Playwr
 
 ## Prerequisites
 
-- Node.js (v14 or later)
+- Node.js (v18 or later)
 - npm
 - playwright
 
