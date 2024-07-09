@@ -1,0 +1,40 @@
+{
+    "searchBox": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='twotabsearchtextbox']",
+        "description": "searchbox field input"
+    },
+    "searchButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='nav-search-submit-button']",
+        "description": "searchbox submit button"
+    },
+    "searchResults": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@data-component-type='s-search-result']",
+        "description": "search results list",
+        "actionOptions": {
+            "timeout": 5000
+        }
+    },
+    "sortBy": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[text()='Sort by:']",
+        "description": "sort search results by"
+    },
+    "selectFoodCategory": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[text()='Grocery & Gourmet Food']",
+        "description": "select Grocery & Gourmet Food category"
+    },
+    "expandSortSelector": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[@id='a-autoid-0']",
+        "description": "expand Sort Selector"
+    },
+    "sortPriceLowHigh": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[@id='s-result-sort-select_1']",
+        "description": "set prce from lowest to highest"
+    }
+}

@@ -29,31 +29,41 @@ npm install
 
 ### 3. Project Structure
 
-```bash
+```
 .
-├── af-testing.code-workspace # VSCode workspace configuration
+├── af-testing.code-workspace           # VSCode workspace configuration
+├── config
+│   ├── .env.dev                        # Development environment configuration
+│   ├── .env.live                       # Live environment configuration
+│   ├── .env.stage                      # Staging environment configuration
 ├── e2e_tests
 │   ├── corelib
+│   │   └── corelib.spec.ts
 │   ├── tests
-│   │   ├── features
-│   │   │   ├── products
-│   │   │   │   └── productpage.feature
+│   │   ├── features                    # Cucumber Feature files
 │   │   │   └── homepage.feature
-│   │   ├── locators
-│   │   ├── pages
-│   │   └── steps
-│   │       └── homepage.spec.ts
+│   │   ├── locators                    # Web Elements Locators
+│   │   │   └── homepageloc.json
+│   │   ├── pages                       # Page Object Models
+│   │   │   ├── basePage.ts
+│   │   │   └── homePage.ts
+│   │   └── steps                       # Tests
+│   │       └── homePage.spec.ts
 ├── node_modules
 ├── reports
+│   ├── cucumber_report.html
+│   ├── cucumber_report.json
+│   └── cucumber_report.xml
 ├── .vscode
-│   └── extensions.json    # VSCode workspace extensions
-├── cucumber.json          # Cucumber configuration
+│   └── extensions.json                 # VSCode workspace extensions
+├── .gitignore
+├── cucumber.json                       # Cucumber configuration
+├── index.ts                            # Reporting page generation
 ├── package-lock.json
-├── package.json           # Info, License and dev dependencies
+├── package.json                        # Info, License and dev dependencies
 ├── README.md
-└── tsconfig.json          # TypeScript configuration
+└── tsconfig.json                       # TypeScript configuration
 
-```
 
 ### 4. Configuration
 
