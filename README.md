@@ -63,9 +63,10 @@ npm install
 ├── package.json                        # Info, License and dev dependencies
 ├── README.md
 └── tsconfig.json                       # TypeScript configuration
-
+```
 
 ### 4. Configuration
+
 
 Playwright Configuration
 Ensure Playwright is properly configured in`package.json`.

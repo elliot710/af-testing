@@ -24,7 +24,7 @@
     },
     "selectFoodCategory": {
         "locatorOptions": {},
-        "locator": "xpath=//span[text()='Grocery & Gourmet Food']",
+        "locator": "xpath=//div[@id='departments']//span[@class='a-list-item']/a[1]",
         "description": "select Grocery & Gourmet Food category"
     },
     "expandSortSelector": {
@@ -36,5 +36,40 @@
         "locatorOptions": {},
         "locator": "xpath=//a[@id='s-result-sort-select_1']",
         "description": "set prce from lowest to highest"
+    },
+    "productPrice": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@data-cy='price-recipe']//span[@class='a-price']/span[contains(@class, 'a-offscreen')]",
+        "description": "product price"
+    },
+    "addToCartButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//button[@class='a-button-text']",
+        "description": "add to cart button"
+    },
+    "productName": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@data-cy='title-recipe']//span[@class='a-size-base-plus a-color-base']",
+        "description": "name of the product"
+    },
+    "subtotalValueOnSearch": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@class='a-row ewc-subtotal-value']/span/span",
+        "description": "subtotal price value"
+    },
+    "subtotalValueOnCart": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[@id='sc-subtotal-amount-buybox']",
+        "description": "subtotal price value on cart page"
+    },
+    "goToCartButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[@id='nav-cart']",
+        "description": "go to cart button"
+    },
+    "signInPageHeader": {
+        "locatorOptions": {},
+        "locator": "xpath=//div/div/h1",
+        "description": "sign in page"
     }
 }
