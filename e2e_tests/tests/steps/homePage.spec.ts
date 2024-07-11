@@ -58,7 +58,6 @@ Then('The product {string} is successfully found and added to the cart', async f
     await cartPage.proceedToCheckout();
 
     await signIn.checkPageTitle("Sign in");
-
 });
 
 

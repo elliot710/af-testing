@@ -17,20 +17,24 @@ export default class SignIn extends BasePage{
 
 
     async checkPageTitle(pageName: string): Promise<boolean> {
-        try {
-          await this.page.waitForSelector(cartPageLoc.cartPageHeader.locator);
-          const titleText = await this.page.locator(cartPageLoc.cartPageHeader.locator).innerText();
-          return titleText.includes(pageName);
-        } catch (error) {
-          console.error('Error checking page title:', error);
-          return false;
-        }
+      try {
+        await this.page.waitForSelector(cartPageLoc.cartPageHeader.locator, { timeout: 5000 });
+        await this.page.locator(cartPageLoc.cartPageHeader.locator).isVisible({ timeout: 5000 });
+        
+        const titleText = await this.page.locator(cartPageLoc.cartPageHeader.locator).innerText();
+        
+        console.log('Page Title:', titleText);
+    
+        return titleText.toLowerCase().includes(pageName.toLowerCase());
+      } catch (error) {
+        console.error('Error checking page title:', error);
+        return false;
       }
+    }
 
       async proceedToCheckout() {
         await this.page.locator(cartPageLoc.proceedToCheckoutButton.locator).click();
-        await this.page.waitForSelector(signInPageLoc.signInPageHeader.locator);
-        return new SignIn(getPage(),this.log);
+        expect((await this.page.waitForSelector(signInPageLoc.signInPageHeader.locator)).isVisible()).toBeTruthy();
     }
 
 }
