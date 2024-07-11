@@ -15,18 +15,18 @@ export default class SignIn extends BasePage{
     }
 
 
-    async checkPageTitle(pageName: string): Promise<boolean> {
+    async getPageTitle(){
       try {
-        await this.page.waitForSelector(signinpageloc.signInPageHeader.locator, { timeout: 5000 });
+        await this.page.waitForSelector(signinpageloc.signInPageHeader.locator);
         await this.page.locator(signinpageloc.signInPageHeader.locator).isVisible({ timeout: 5000 });
         
         const titleText = await this.page.locator(signinpageloc.signInPageHeader.locator).innerText();
         
         console.log('Page Title:', titleText);
     
-        return titleText.toLowerCase().includes(pageName.toLowerCase());
+        return titleText.toLowerCase();
       } catch (error) {
-        console.error('Error checking page title:', error);
+        console.error('Error getting page title:', error);
         return false;
       }
     }

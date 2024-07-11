@@ -31,11 +31,16 @@ Then('The product {string} is found and added to the cart', async function (stri
     expect(price).toBe(subtotal);
     await homePage.goToCart();
 
+});
+
+Then('The user is redirected to the registration',  async function () {
     cartPage = new CartPage(getPage(), this.attach);
-    signIn=new SignIn(getPage(), this.attach);
     await cartPage.proceedToCheckout();
 
-    await signIn.checkPageTitle("Sign in");
+    signIn=new SignIn(getPage(), this.attach);
+    const title = await signIn.getPageTitle();
+    expect(title).toBe("sign in");
+    this.attach(`Page title checked`);
 });
 
 When('User searches again for {string}', async function (string) {
@@ -51,16 +56,20 @@ Then('The product {string} is successfully found and added to the cart', async f
     this.attach(`Added Snickers to cart with price: $${price}`);
     const subtotal = await homePage.getSubtotalPrice();
     expect(price).toBe(subtotal);
-    await homePage.goToCart();
-
-    cartPage = new CartPage(getPage(), this.attach);
-    signIn=new SignIn(getPage(), this.attach);
-    await cartPage.proceedToCheckout();
-
-    await signIn.checkPageTitle("Sign in");
+    await homePage.goToCart();  
 });
 
 
-/* Then('Fail last step intentionally',  async function () {
-    expect(1).toBe(2);
-}); */
+Then('The user is redirected to the registration again',  async function () {
+
+    cartPage = new CartPage(getPage(), this.attach);
+    await cartPage.proceedToCheckout();
+
+    signIn=new SignIn(getPage(), this.attach);
+    const title = await signIn.getPageTitle();
+    expect(title).toBe("Create account");
+    this.attach(`fail test intentionally`);
+    /*maybe it was a spelling mistake in the email
+    but user is technically redirected to 
+    [Sign in] page, not [Registration]*/
+});
