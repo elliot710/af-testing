@@ -1,0 +1,12 @@
+{
+    "proceedToCheckoutButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@name='proceedToRetailCheckout']",
+        "description": "checkout button"
+    },
+    "cartPageHeader": {
+        "locatorOptions": {},
+        "locator": "xpath=//div/div/h1",
+        "description": "sign in page"
+    }
+}

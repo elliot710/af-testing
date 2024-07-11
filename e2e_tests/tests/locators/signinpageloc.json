@@ -1,0 +1,7 @@
+{
+    "signInPageHeader": {
+        "locatorOptions": {},
+        "locator": "xpath=//div/div/h1",
+        "description": "sign in page"
+    }
+}

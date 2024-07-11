@@ -1,0 +1,75 @@
+{
+    "searchBox": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='twotabsearchtextbox']",
+        "description": "searchbox field input"
+    },
+    "searchButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//input[@id='nav-search-submit-button']",
+        "description": "searchbox submit button"
+    },
+    "searchResults": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@data-component-type='s-search-result']",
+        "description": "search results list",
+        "actionOptions": {
+            "timeout": 5000
+        }
+    },
+    "sortBy": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[text()='Sort by:']",
+        "description": "sort search results by"
+    },
+    "selectFoodCategory": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@id='departments']//span[@class='a-list-item']/a[1]",
+        "description": "select Grocery & Gourmet Food category"
+    },
+    "expandSortSelector": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[@id='a-autoid-0']",
+        "description": "expand Sort Selector"
+    },
+    "sortPriceLowHigh": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[@id='s-result-sort-select_1']",
+        "description": "set prce from lowest to highest"
+    },
+    "productPrice": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@data-cy='price-recipe']//span[@class='a-price']/span[contains(@class, 'a-offscreen')]",
+        "description": "product price"
+    },
+    "addToCartButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//button[@class='a-button-text']",
+        "description": "add to cart button"
+    },
+    "productName": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@data-cy='title-recipe']//span[@class='a-size-base-plus a-color-base']",
+        "description": "name of the product"
+    },
+    "subtotalValueOnSearch": {
+        "locatorOptions": {},
+        "locator": "xpath=//div[@class='a-row ewc-subtotal-value']/span/span",
+        "description": "subtotal price value"
+    },
+    "subtotalValueOnCart": {
+        "locatorOptions": {},
+        "locator": "xpath=//span[@id='sc-subtotal-amount-buybox']",
+        "description": "subtotal price value on cart page"
+    },
+    "goToCartButton": {
+        "locatorOptions": {},
+        "locator": "xpath=//a[@id='nav-cart']",
+        "description": "go to cart button"
+    },
+    "signInPageHeader": {
+        "locatorOptions": {},
+        "locator": "xpath=//div/div/h1",
+        "description": "sign in page"
+    }
+}
